@@ -11,6 +11,7 @@ class Dictionary {
     private:
         List *a[10];
         int hash(std::string x, int m);
+        int num_people;
     public:
         Dictionary();
         ~Dictionary();

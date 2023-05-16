@@ -4,6 +4,7 @@ Dictionary::Dictionary() {
     for(int i = 0; i< 10; i++) {
         a[i] = new List();
     }
+    num_people = 0;
 }
 
 int Dictionary::hash(std::string x , int m) {
@@ -25,7 +26,8 @@ Dictionary::~Dictionary() {
 }
 
 void Dictionary::insert_person(std::string first, std::string last) {
-    Node *n = new Node(new Person(first, last, 0));
+    Node *n = new Node(new Person(first, last, num_people));
+    num_people++;
     int ind = hash(n->get_data() -> get_name() , 10);
 
     a[ind] -> insert(n);
